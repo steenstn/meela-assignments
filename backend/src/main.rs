@@ -3,6 +3,7 @@ use std::env;
 use log::info;
 use poem::{
     EndpointExt, Route, Server,
+    endpoint::{StaticFileEndpoint, StaticFilesEndpoint},
     error::ResponseError,
     get, handler,
     http::StatusCode,
@@ -64,8 +65,15 @@ async fn main() -> Result<(), Error> {
 
     info!("Initialize db pool");
     let pool = init_pool().await?;
-    let app = Route::new().at("hello/:name", get(hello)).data(pool);
-    Server::new(TcpListener::bind("0.0.0.0:3005")).run(app).await?;
+    let app = Route::new()
+        .at("/api/hello/:name", get(hello))
+        .at("/favicon.ico", StaticFileEndpoint::new("www/favicon.ico"))
+        .nest("/static/", StaticFilesEndpoint::new("www"))
+        .at("*", StaticFileEndpoint::new("www/index.html"))
+        .data(pool);
+    Server::new(TcpListener::bind("0.0.0.0:3005"))
+        .run(app)
+        .await?;
 
     Ok(())
 }

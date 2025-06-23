@@ -7,7 +7,7 @@ edition = "2024"
 dotenv = "0.15.0"
 env_logger = "0.11.8"
 log = "0.4.27"
-poem = "3.1.11"
+poem = { version = "3.1.11", features = ["static-files"] }
 serde = "1.0.219"
 sqlx = { version = "0.8.6", features = ["sqlite", "runtime-tokio"] }
 thiserror = "2.0.12"
