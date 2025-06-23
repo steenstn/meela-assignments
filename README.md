@@ -20,10 +20,11 @@ where they left off.
 
 Dos:
 
-1. **Multi-step form** at least 3 questions.
-2. **Save progress** - user can save and exit at any point - this can happen automatically, using a timer, or a button.
+1. **Fork our repo!**
+2. **Multi-step form** at least 3 questions.
+3. **Save progress** - user can save and exit at any point - this can happen automatically, using a timer, or a button.
    All are fine.
-3. **Resume capability** - user can return and continue from where they left off
+4. **Resume capability** - user can return and continue from where they left off
 
 Don'ts:
 
@@ -60,6 +61,7 @@ choices than what has been made in the `/backend` directory)
 2. Tell us how to set it up and run it so we can review it:
    1. Either write a `.txt`/`.md` file that tells us which invocations of `cargo run`, `npm run dev`, `yarn dev`, ... we have to use, or
    2. simply provide a `justfile`/`Makefile` for us.
+3. Send us a link to your fork on your github account!
 
 ## GO GO GO! 🌶️🌶️🌶️
 
