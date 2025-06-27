@@ -1,3 +1,20 @@
+# Run instructions
+## Backend
+In the /backend folder, create db and run migrations with: 
+```
+sqlx db create
+sqlx migrate run
+```
+Then in the /backend folder start backend with `cargo run`
+
+## Frontend
+In the /frontend folder run
+```
+npm install
+npm run dev
+```
+
+---
 # Take-home task: Client Onboarding Form
 
 ## Background
